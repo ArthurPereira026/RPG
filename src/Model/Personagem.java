@@ -1,24 +1,16 @@
 package Model;
 
+import java.util.Random;
+
 public abstract class Personagem {
 
     private String nome;
     private int vida;
-    private String corCabelo;
-    private String corPele;
-    private double altura;
-    private double peso;
-    private String arma;
+    public static Random d20 = new Random();
 
-
-    public Personagem(String nome, int vida, String corCabelo, String corPele, double altura, double peso, String arma) {
+    public Personagem(String nome, int vida) {
         this.nome = nome;
         this.vida = vida;
-        this.corCabelo = corCabelo;
-        this.corPele = corPele;
-        this.altura = altura;
-        this.peso = peso;
-        this.arma = arma;
     }
 
     public String getNome(){
@@ -29,25 +21,7 @@ public abstract class Personagem {
         return this.vida;
     }
 
-    public String getCorCabelo() {
-        return corCabelo;
-    }
 
-    public double getAltura() {
-        return altura;
-    }
-
-    public String getCorPele() {
-        return corPele;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public String getArma() {
-        return arma;
-    }
 
     public void receberDano(int dano){
 

@@ -1,18 +1,27 @@
 package Model;
 
-public class Guerreiro extends Personagem{
+public class Guerreiro extends  Personagem{
 
+    private String corCabelo;
+    private String corPele;
+    private String armaCorpoCorpo;
+    private String armaRange;
     private int forcaFisica;
+    private int pontaria;
 
 
-    public Guerreiro(String nome, int vida, String corCabelo, String corPele, double altura, double peso, String arma, int forcaFisica) {
-        super(nome, vida, corCabelo, corPele, altura, peso, arma);
-        this.forcaFisica =  forcaFisica;
+    public Guerreiro(String nome, int vida, String corCabelo, String corPele, String armaCorpoCorpo, String armaRange, int forcaFisica, int pontaria) {
+        super(nome, vida);
+        this.corCabelo =  corCabelo;
+        this.corPele = corPele;
+        this.armaCorpoCorpo = armaCorpoCorpo;
+        this.armaRange = armaRange;
+        this.forcaFisica = forcaFisica;
+        this.pontaria = pontaria;
     }
 
     @Override
     public int atacar() {
-        System.out.println("O Guerreiro " + getNome() + "ataca com sua " + getArma()+ "e da " + this.forcaFisica+ "de dano");
-        return this.forcaFisica;
+        return 0;
     }
 }
