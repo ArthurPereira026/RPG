@@ -6,7 +6,6 @@ public class Mago extends Personagem{
     private String arma;
     private int nivelPoderMagico;
     private String magiaDano;
-    private String magiaSuport;
 
 
 
@@ -16,12 +15,12 @@ public class Mago extends Personagem{
         this.arma = arma;
         this.nivelPoderMagico = nivelPoderMagico;
         this.magiaDano = magiaDano;
-        this.magiaSuport = magiaSuport;
     }
 
 
     @Override
     public int atacar() {
+
         return 0;
     }
 }
