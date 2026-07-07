@@ -31,6 +31,9 @@ public class Guerreiro extends  Personagem{
         opcao = arma.nextInt();
         do {
             switch (opcao){
+
+                case 0:
+                    System.out.println("Você decidiu fugir dessa vez!");
                 case 1:
                     int atacar = d20.nextInt(1,21);
                     int dano = 0;
@@ -48,11 +51,27 @@ public class Guerreiro extends  Personagem{
                         System.out.printf("Você acertou um ataque critico seu dano foi de"+dano+"com sua "+this.armaCorpoCorpo);
                     }
                 case 2:
-
+                    int atacarR = d20.nextInt(1,21);
+                    int danoR = 0;
+                    if (atacarR <= 5){
+                        System.out.printf("Você errou o golpe!");
+                    }
+                    else if (atacarR <= 10  && atacarR > 5) {
+                        dano = this.forcaFisica+d6.nextInt(1,7)/2;
+                        System.out.printf("Você acertou o alvo de raspão seu dano foi de " +danoR+"com sua "+this.armaRange);
+                    } else if (atacarR > 10 && atacarR <= 17) {
+                        dano = this.forcaFisica+d6.nextInt(1,7);
+                        System.out.printf("Você acertou o ataca seu dano foi de" +danoR+ "com sua "+this.armaRange);
+                    } else if (atacarR > 17) {
+                        dano = this.forcaFisica+d6.nextInt(1,7)*2;
+                        System.out.printf("Você acertou um ataque critico seu dano foi de"+danoR+"com sua "+this.armaRange);
+                    }
+                default:
+                    System.out.println("Opção invalida!");
             }
         }while (opcao == 0);
 
 
-        return dano;
+        return opcao;
     }
 }
